@@ -4,7 +4,6 @@ function App() {
   return (
     <>
      <Pass/>
-     <h1>dfxcghvbjnkml,</h1>
     </>
   )
 }
