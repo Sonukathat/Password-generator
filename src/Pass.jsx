@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const Pass = () => {
     const [pass, setPass] = useState("GenPass123#@");
@@ -17,7 +19,9 @@ export const Pass = () => {
 
     const handlegenerate = () => {
         if (inputVal < 8 || inputVal > 20) {
-            alert("Enter Number Length Between 8 To 20...");
+            toast.error("Enter Password Length Between 8 To 20...", {
+                position: "top-center",
+            });
             setInputval("");
         } else {
             let chars = "";
@@ -39,6 +43,10 @@ export const Pass = () => {
             }
 
             setPass(randomStr);
+
+            toast.success("Your Password Is Live...", {
+                position: "top-center",
+            });
         }
     };
 
@@ -126,8 +134,8 @@ export const Pass = () => {
                 >
                     Generate Password
                 </button>
+                <ToastContainer />
             </div>
         </div>
     );
-}
-
+};
